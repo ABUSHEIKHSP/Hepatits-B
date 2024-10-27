@@ -62,6 +62,9 @@ heatmap_generator.fit_transform(df)
 
 This will generate a heatmap with a title indicating that it is for chronic hepatitis data.
 
+![image](https://github.com/user-attachments/assets/c4dae829-74ff-4db5-9b3d-048d08cb5b4e)
+
+
 ## Getting Started
 -------------------
 
