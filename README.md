@@ -71,6 +71,24 @@ heatmap_generator = HeatmapGenerator()
 heatmap_generator.fit_transform(df)
 ```
 
+### Parameters
+
+You can customize the heatmap by passing additional arguments to the `HeatmapGenerator` transformer or to the `heatmap_pipeline`. You can generate heatmap for `chronic` by passing `acute=False`. By default acute is set to True.
+
+```python
+# Generating heatmap for acute hepatits-B
+heatmap_pipeline.fit_transform(df)
+```
+![image](https://github.com/user-attachments/assets/22dba8df-1c73-4b33-9155-7adf2a4de2a7)
+
+
+```python
+# Generating heatmap for chronic hepatits-B
+heatmap_pipeline.fit_transform(df, acute=False)
+```
+![image](https://github.com/user-attachments/assets/8b7be12b-6825-41b3-9a02-c90b4875bf07)
+
+
 ## Getting Started
 -------------------
 
