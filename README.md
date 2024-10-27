@@ -1,3 +1,5 @@
+Here's an updated version of the text with an additional heading to explain the two processes:
+
 # Hepatitis B Data Preprocessing and Analysis
 ==========================================================================================
 
@@ -22,16 +24,22 @@ The `hepatitis_modules.py` file defines the following custom transformers:
 
 The repository defines two pipelines:
 
-* **col_pipeline**: Applies the `DropIrrelevantColumn`, `RenameColumn`, and `HBsAgValueChanger` transformers in sequence.
-* **heatmap_pipeline**: Applies the `col_pipeline` and then generates a heatmap using the `HeatmapGenerator` transformer.
+* **col_pipeline**: Applies the `DropIrrelevantColumn`, `RenameColumn`, and `HBsAgValueChanger` transformers in sequence. This pipeline is designed to perform the initial data cleaning and preprocessing steps, which are necessary for building a machine learning model in the future. Additional transformers can be added to this pipeline as needed for specific machine learning tasks.
+* **heatmap_pipeline**: Applies the `col_pipeline` and then generates a heatmap using the `HeatmapGenerator` transformer. This pipeline is designed to provide a quick and easy way to generate a heatmap, without having to manually call the `col_pipeline` and `HeatmapGenerator` transformers separately.
 
 ## Heatmap Generation
 ----------------------
 
 The `heatmap.ipynb` file demonstrates how to use the `heatmap_pipeline` to generate heatmaps for acute and chronic hepatitis data. The heatmap generator can be customized to display different titles and correlation matrices.
 
-## Example Usage
------------------
+## Using the Heatmap Generator
+-----------------------------
+
+You can use the `heatmap_pipeline` to generate a heatmap with the initial data cleaning and preprocessing steps applied, or you can use the `HeatmapGenerator` transformer directly to an already preprocessed data to generate a heatmap.
+
+### Using the Heatmap Pipeline
+
+To use the `heatmap_pipeline`, you can simply apply it to your dataset without having to manually call the `col_pipeline` and `HeatmapGenerator` transformers separately.
 
 ```python
 from hepatitis_modules import heatmap_pipeline
@@ -43,30 +51,25 @@ df = ...
 heatmap_pipeline.fit_transform(df)
 ```
 
-This will generate a heatmap of correlations between numeric columns in the dataset, with a title indicating that it is for acute hepatitis data.
+### Using the HeatmapGenerator Directly
 
-![image](https://github.com/user-attachments/assets/476d088e-32fd-4668-9896-a87133e740fa)
-
-
-## Customization
------------------
-
-You can customize the heatmap generator by passing additional arguments to the `HeatmapGenerator` transformer. For example, you can change the title of the heatmap by passing a different value for the `acute` parameter:
+To use the `HeatmapGenerator` transformer directly, you will need to first apply the `col_pipeline` to your dataset to perform the necessary data cleaning and preprocessing steps.
 
 ```python
-from hepatitis_modules import HeatmapGenerator
+from hepatitis_modules import col_pipeline, HeatmapGenerator
+
+# Load your dataset here
+df = ...
+
+# Apply the col_pipeline to your dataset
+df = col_pipeline.fit_transform(df)
 
 # Create a custom heatmap generator
-heatmap_generator = HeatmapGenerator(acute=False)
+heatmap_generator = HeatmapGenerator()
 
 # Apply the heatmap generator to your dataset
 heatmap_generator.fit_transform(df)
 ```
-
-This will generate a heatmap with a title indicating that it is for chronic hepatitis data.
-
-![image](https://github.com/user-attachments/assets/c4dae829-74ff-4db5-9b3d-048d08cb5b4e)
-
 
 ## Getting Started
 -------------------
