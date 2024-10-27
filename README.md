@@ -74,7 +74,7 @@ heatmap_generator.fit_transform(df)
 ## Getting Started
 -------------------
 
-1. Clone the repository: `git clone https://github.com/your-username/hepatitis-data-preprocessing.git`
+1. Clone the repository: `git clone https://github.com/ABUSHEIKHSP/Hepatits-B.git`
 2. Install the required dependencies: `pip install -r requirements.txt`
 3. Load your dataset and apply the `heatmap_pipeline` to generate a heatmap.
 
