@@ -32,8 +32,8 @@ The repository defines two pipelines:
 
 The `heatmap.ipynb` file demonstrates how to use the `heatmap_pipeline` to generate heatmaps for acute and chronic hepatitis data. The heatmap generator can be customized to display different titles and correlation matrices.
 
-## Using the Heatmap Generator
------------------------------
+## Overview
+------------
 
 You can use the `heatmap_pipeline` to generate a heatmap with the initial data cleaning and preprocessing steps applied, or you can use the `HeatmapGenerator` transformer directly to an already preprocessed data to generate a heatmap.
 
