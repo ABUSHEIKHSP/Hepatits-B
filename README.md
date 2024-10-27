@@ -71,3 +71,13 @@ This will generate a heatmap with a title indicating that it is for chronic hepa
 1. Clone the repository: `git clone https://github.com/your-username/hepatitis-data-preprocessing.git`
 2. Install the required dependencies: `pip install -r requirements.txt`
 3. Load your dataset and apply the `heatmap_pipeline` to generate a heatmap.
+
+**Note:** This assumes you have Python and Jupyter Notebook installed on your system. If you don't have Jupyter Notebook installed, you can install it using `pip install jupyter` or `conda install jupyter`. Alternatively, you can use a Python IDE like PyCharm or Visual Studio Code to run the code.
+
+**Prerequisites:**
+
+* Python 3.x
+* Jupyter Notebook (optional)
+* pip or conda for package management
+
+By following these steps, you should be able to get started with the hepatitis data preprocessing pipeline and generate a heatmap using the `heatmap_pipeline`.
