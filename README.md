@@ -45,6 +45,9 @@ heatmap_pipeline.fit_transform(df)
 
 This will generate a heatmap of correlations between numeric columns in the dataset, with a title indicating that it is for acute hepatitis data.
 
+![image](https://github.com/user-attachments/assets/476d088e-32fd-4668-9896-a87133e740fa)
+
+
 ## Customization
 -----------------
 
